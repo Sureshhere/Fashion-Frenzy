@@ -131,12 +131,44 @@ header {
   padding: 0 20px;
   position: relative;
 }
+
+
 #navbar li a {
   text-decoration: none;
+  display: inline-block;
   color: #1a1a1a;
   font-size: 22px;
   font-weight: 600;
   transition: 0.3s ease;
+  position: relative;
+}
+
+#navbar li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #02008d;
+  transition: width .3s;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #1D267D;
+}
+
+/* 
+#navbar li a:hover::after {
+  width: 100%;
+  transition: width .3s;
 }
 #navbar li a:hover,
 #navbar li a.active {
@@ -144,14 +176,13 @@ header {
 }
 #navbar li a.active::after,
 #navbar li a:hover::after {
-  content: "";
-  width: 30%;
+  width: 54px;
   height: 3px;
   background-color: #1D267D;
   position: absolute;
   bottom: -4px;
-  left: 20px;
-}
+  left: 20px; */
+/* } */
 #mobile {
   display: none;
   align-items: center;
@@ -1470,7 +1501,7 @@ footer .copyright {
   display: none;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 15px;
   z-index: 99;
   font-size: 18px;
   border: none;
@@ -1480,6 +1511,8 @@ footer .copyright {
   cursor: pointer;
   padding: 15px;
   border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 #myBtn i:hover{
   transform: rotateX('30deg');
