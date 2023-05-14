@@ -1153,6 +1153,7 @@ footer .copyright {
   }
   #banner {
     height: 30vh;
+    background-position-x: right;
   }
   #sm-banner {
     /* min-width: 100%;
