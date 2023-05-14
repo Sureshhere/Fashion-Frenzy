@@ -346,7 +346,7 @@ header {
 /* ---------  Banner ----------- */
 /* =============================*/
 #banner {
-  background-image: url("https://img.freepik.com/free-photo/closeup-shot-amused-happy-entertained-goodlooking-sociable-woman-with-fair-hair-beautiful_1258-136655.jpg?w=1380&t=st=1684059444~exp=1684060044~hmac=4ac97fe262cdb9ae3892adcbd61f045f54887c07730e7ff4a653229baa2c4aed");
+  background-image: url(../img/banner/girlPointing.avif);
   width: 100%;
   height: 40vh;
   background-position: center;
@@ -1153,7 +1153,7 @@ footer .copyright {
   }
   #banner {
     height: 30vh;
-    background-image: url("https://img.freepik.com/free-photo/front-view-woman-with-shopping-bag-concept_23-2148674158.jpg?size=626&ext=jpg&uid=R61745785&ga=GA1.2.1922873727.1684057838&semt=sph");
+    background-image: url("../img/banner/shoppingBag.avif");
     background-position-x: center;
     background-repeat: no-repeat;
   }
@@ -1455,4 +1455,35 @@ footer .copyright {
     width: 100%;
     padding: 20px;
   }
+}
+
+
+
+/* ========================================================== */
+/* ---------------Goto top button--------------- */
+/* ========================================================== */
+
+*{
+  scroll-behavior: smooth;
+}
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #1D267D;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+#myBtn i:hover{
+  transform: rotateX('30deg');
+}
+#myBtn:hover {
+  background-color: #0d1452;
 }

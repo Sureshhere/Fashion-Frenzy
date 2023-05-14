@@ -20,6 +20,9 @@
 </head>
 
 <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <header>
         <a href="index.html" class="logo">
             <span class="logo">Fashion Frenzy</span>
@@ -298,6 +301,23 @@
     </footer>
     <!-- ============================================================================================================ -->
     <script src="script.js"></script>
+    <script>
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+    
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
 </body>
 
 </html>
