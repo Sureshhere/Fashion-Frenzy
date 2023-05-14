@@ -15,8 +15,8 @@
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 
     <!-- ============ META Tags============== -->
@@ -74,6 +74,37 @@
         <p> Limited-time discounts available</p>
         <button>Shop Now</button>
     </section>
+
+
+    <div class="ff-title">
+        <span>Be Part of the Fashion Frenzy</span>
+        <p>Embrace Your Unique Style with Gorgeous Apparel</p>
+    </div>
+
+
+    <!-- ================================================== -->
+    <!-- ================   CAROUSEL   ====================== -->
+    <!-- ================================================== -->
+
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slides">
+                <div class="slide"><img src="/img/carousel/caro1.jpg" alt="Slide 1"></div>
+                <div class="slide"><img src="/img/carousel/caro2.png" alt="Slide 2"></div>
+                <div class="slide"><img src="/img/carousel/caro3.jpg" alt="Slide 3"></div>
+                <div class="slide"><img src="/img/carousel/caro1.jpg" alt="Slide 4"></div>
+                <div class="slide"><img src="/img/carousel/caro5.png" alt="Slide 5"></div>
+            </div>
+        </div>
+        <div class="arrow arrow-left">
+            <i class="fas fa-arrow-left"></i>
+        </div>
+        <div class="arrow arrow-right">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+    </div>
+
 
 
     <!-- -----------------------   Products Section ----------------  -->
@@ -334,6 +365,57 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
+    </script>
+
+    <!-- ==============CAROUSEL================= -->
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.slide');
+            const arrowLeft = document.querySelector('.arrow-left');
+            const arrowRight = document.querySelector('.arrow-right');
+            let currentIndex = 0;
+            let slideInterval;
+
+            function startSlideInterval() {
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            function stopSlideInterval() {
+                clearInterval(slideInterval);
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlidePosition();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlidePosition();
+            }
+
+            function updateSlidePosition() {
+                const slideWidth = slides[0].offsetWidth;
+                const translateX = -1 * currentIndex * slideWidth;
+                carousel.style.transform = `translateX(${translateX}px)`;
+            }
+
+            arrowLeft.addEventListener('click', function () {
+                prevSlide();
+                stopSlideInterval();
+                startSlideInterval();
+            });
+
+            arrowRight.addEventListener('click', function () {
+                nextSlide();
+                stopSlideInterval();
+                startSlideInterval();
+            });
+
+            startSlideInterval();
+        });
+
     </script>
 </body>
 
