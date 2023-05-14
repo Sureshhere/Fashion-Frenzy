@@ -1520,3 +1520,22 @@ footer .copyright {
 #myBtn:hover {
   background-color: #0d1452;
 }
+
+
+/* ================================================= */
+/* --------------- CUSTOM SCROLLBAR ---------------- */
+/* ================================================= */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #e1dbdb;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5C469C;
+  border-radius: 5px;
+}
+
