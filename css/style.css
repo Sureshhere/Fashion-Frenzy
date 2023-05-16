@@ -8,6 +8,15 @@
 * {
   -webkit-tap-highlight-color: transparent;
 }
+::-moz-selection { 
+  color: red;
+  background: yellow;
+}
+
+::selection {
+  color: rgb(248, 247, 250);
+  background: #283182;
+}
 
 a {
   text-decoration: none;
