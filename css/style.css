@@ -1439,6 +1439,15 @@ footer .copyright {
     padding: 0 20px;
     background-position: 55%;
   }
+  .ff-title span{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    color: #12209a;
+    font-size: 30px;
+  }
+  .ff-title p{
+    font-size: 15px;
+  }
   #feature {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 0;
