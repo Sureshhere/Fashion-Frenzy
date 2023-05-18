@@ -215,20 +215,15 @@
             <!-- <h6>Home / Shirt</h6> -->
             <h4>DENIM FABRIC SHIRT</h4>
             <h2>Rs. 649</h2>
-            <select id="sizeSelect">
-                <option selected disabled style="display:none;">No size selected</option>
+            <select>
+                <option>Select Size</option>
                 <option>M(38)</option>
                 <option>L(40)</option>
                 <option>XL(42)</option>
                 <option>XXL(44)</option>
             </select>
-            
-
-            <input type="number" id="quantityInput" value="1" />
-            <button type="button" class="btn btn-primary popover-button" data-toggle="popover" onclick="addToCart(this)"
-                data-item="DENIM FABRIC SHIRT">Add to Cart</button>
-
-
+            <input type="number" value="1" />
+            <button class="normal">Add To cart</button>
             <h4>Product Details</h4>
             <span>
                 <b>Material:</b> Denim Fabric <br>
@@ -385,30 +380,6 @@
         </div>
     </footer>
 
-    
-
-    <!-- ======================= -->
-    <!-- ----- MODAL AND FORM -->
-    <!-- ======================= -->
-
-    <!-- LINKING VIA JS -->
-    <div id="common-content"></div>
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            var commonContent = document.getElementById('common-content');
-
-            // Fetch the shared HTML file
-            fetch('/featured-products/modalForm.html')
-                .then(function (response) {
-                    return response.text();
-                })
-                .then(function (html) {
-                    // Set the fetched HTML as the content of the common-content element
-                    commonContent.innerHTML = html;
-                });
-        });
-    </script>
-
     <!-- ===================== -->
     <!-----     Replacing images  -------->
     <!-- ===================== -->
@@ -451,11 +422,6 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
