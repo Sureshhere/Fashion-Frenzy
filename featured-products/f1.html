@@ -8,10 +8,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/t-shirt.png"/>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/t-shirt.png" />
     <title>Products - Fashion Frenzy</title>
     <meta name="keywords"
-    content="trending,clothing,fashion,mens wear, shopping,online clothing store, fashion trends, high-quality clothing, affordable fashion, trendy styles, hassle-free ordering, fast shipping, easy returns, wardrobe upgrade, unique style">
+        content="trending,clothing,fashion,mens wear, shopping,online clothing store, fashion trends, high-quality clothing, affordable fashion, trendy styles, hassle-free ordering, fast shipping, easy returns, wardrobe upgrade, unique style">
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <!-- <link rel="stylesheet" href="css/all.min.css" /> -->
@@ -20,12 +20,144 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com/dist/email.min.js"></script>
+
+    <script src="addToCart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('4eADoZRzYEHUAVlKh'); // Replace with your User ID
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                var cartItems = getCartItemsFromStorage();
+                this.cartItems.value = JSON.stringify(cartItems); // Update cartItems input value
+
+                emailjs.sendForm('service_xyzrwi9', 'template_my2ikx5', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                        showCart();
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+            showCart();
+
+        }
+
+        function showCart() {
+            var cartItems = getCartItemsFromStorage();
+            var cartItemsList = document.getElementById('cart-items-list');
+            cartItemsList.innerHTML = '';
+
+            if (cartItems.length === 0) {
+                var emptyCartItem = document.createElement('li');
+                emptyCartItem.className = 'list-group-item';
+                emptyCartItem.textContent = 'Cart is empty';
+                cartItemsList.appendChild(emptyCartItem);
+            } else {
+                cartItems.forEach(function (item) {
+                    var cartItem = document.createElement('li');
+                    cartItem.className = 'list-group-item';
+                    cartItem.textContent = item;
+
+                    var removeButton = document.createElement('button');
+                    removeButton.className = 'btn btn-danger btn-sm float-end';
+                    removeButton.textContent = 'Remove';
+                    removeButton.addEventListener('click', function () {
+                        removeItemFromCart(item);
+                    });
+
+                    cartItem.appendChild(removeButton);
+                    cartItemsList.appendChild(cartItem);
+                });
+            }
+
+            var cartItemsInput = document.getElementById('cartItems');
+            cartItemsInput.value = cartItems.join('\n');
+
+            var outputElement = document.getElementById('output');
+            var arrayString = cartItems.map(item => '<p>' + item + '</p>').join('');
+            outputElement.innerHTML = arrayString;
+
+        }
+
+        function getCartItemsFromStorage() {
+            var cartItems = localStorage.getItem('cartItems');
+            return cartItems ? JSON.parse(cartItems) : [];
+        }
+
+        function removeItemFromCart(item) {
+            var cartItems = getCartItemsFromStorage();
+            var index = cartItems.indexOf(item);
+
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                showCart();
+            }
+        }
+
+        function addToCart(button) {
+            var selectedSize = document.getElementById("sizeSelect").value;
+            var quantity = document.getElementById("quantityInput").value;
+            var itemName = button.getAttribute("data-item");
+
+            var newItemName = quantity + "-" + itemName + "-" + selectedSize;
+
+            // Update the data-item attribute of the button
+            button.setAttribute("data-item", newItemName);
+
+            var item = button.getAttribute('data-item');
+            var cartItems = getCartItemsFromStorage();
+            cartItems.push(item);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            button.setAttribute("data-item", itemName);
+        }
+    </script>
+
+    <script>
+        $(function () {
+            $('.popover-button').popover({
+                content: 'Item added to the cart 🛒✅',
+                trigger: 'manual',
+                placement: 'bottom'
+            }).on('shown.bs.popover', function () {
+                var popover = $(this);
+                setTimeout(function () {
+                    popover.popover('hide');
+                }, 1500);
+            });
+
+            $('.popover-button').click(function () {
+                $(this).popover('show');
+            });
+        });
+    </script>
+
+
     <style>
         header {
             position: initial;
         }
+
+        body {
+            overflow-x: hidden;
+        }
     </style>
     <!--  -->
+
 </head>
 
 <body>
@@ -33,7 +165,7 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
     <header>
-        <a href="../index.html" class="logo">
+        <a href="../index.html" class="logo" style="text-decoration: none;">
             <span class="logo">Fashion Frenzy</span>
         </a>
         <nav>
@@ -44,16 +176,26 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
                 <li id="lg-bag">
-                    <a href="#"><i class="fa fa-bag-shopping"></i></a>
+                    <button type="button" class="btn" onclick="showCart()" data-toggle="modal" data-target="#cartModal">
+                        <a href="#"><i class="fa fa-cart-shopping"></i></a></button>
                 </li>
                 <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
             </ul>
         </nav>
         <div id="mobile">
-            <a href="#"><i class="fa fa-bag-shopping"></i></a>
+            <button type="button" class="btn" onclick="showCart()" data-toggle="modal" data-target="#cartModal"> <a
+                    href="#"><i class="fa fa-cart-shopping"></i></a></button>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </header>
+
+    <!-- <div class="col-12">
+    <div class="row">
+        <div class="col-md-12 mt-3">
+            
+        </div>
+    </div>
+   </div> -->
 
     <!-- ===================== -->
     <!--   Prodetails Section    -->
@@ -82,16 +224,21 @@
             <!-- <h6>Home / Shirt</h6> -->
             <h4>MIDNIGHT GARDEN GOWN</h4>
             <h2>Rs. 1149</h2>
-            <select>
-                <option>Select Size</option>
+
+            <select id="sizeSelect">
+                <option selected disabled style="display:none;">No size selected</option>
                 <option>S(36)</option>
                 <option>M(38)</option>
                 <option>L(40)</option>
                 <option>XL(42)</option>
                 <option>XXL(44)</option>
             </select>
-            <input type="number" value="1" />
-            <button class="normal">Add To cart</button>
+
+
+            <input type="number" id="quantityInput" value="1" />
+            <button type="button" class="btn btn-primary popover-button" data-toggle="popover" onclick="addToCart(this)"
+                data-item="MIDNIGHT GARDEN GOWN">Add to Cart</button>
+
             <h4>Product Details</h4>
             <span>
 
@@ -112,6 +259,8 @@
             </span>
         </div>
     </section>
+
+
 
     <section id="product1" class="section-p1">
         <h2>Featured Products</h2>
@@ -247,6 +396,31 @@
         </div>
     </footer>
 
+
+
+    <!-- ======================= -->
+    <!-- ----- MODAL AND FORM -->
+    <!-- ======================= -->
+
+    <!-- LINKING VIA JS -->
+    <div id="common-content"></div>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var commonContent = document.getElementById('common-content');
+
+            // Fetch the shared HTML file
+            fetch('/featured-products/modalForm.html')
+                .then(function (response) {
+                    return response.text();
+                })
+                .then(function (html) {
+                    // Set the fetched HTML as the content of the common-content element
+                    commonContent.innerHTML = html;
+                });
+        });
+    </script>
+
+
     <!-- ===================== -->
     <!-----     Replacing images  -------->
     <!-- ===================== -->
@@ -274,21 +448,28 @@
     <script src="../script.js"></script>
     <script>
         let mybutton = document.getElementById("myBtn");
-        
-        window.onscroll = function() {scrollFunction()};
-        
+
+        window.onscroll = function () { scrollFunction() };
+
         function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
         function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
-        </script>
+
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>
