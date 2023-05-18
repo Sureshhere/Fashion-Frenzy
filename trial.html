@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Listing</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .custom-select-sm {
+            font-size: 0.875rem;
+            /* Adjust the font size as desired */
+            padding: 0.25rem 0.5rem;
+            /* Adjust the padding as desired */
+        }
+
+        @media (max-width: 767px) {
+
+            /* Mobile and tablet screens */
+            .product-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product-card img {
+                margin-bottom: 1rem;
+            }
+
+            #sortList.form-select {
+                font-size: 0.875rem;
+                padding: 0.25rem 0.5rem;
+            }
+
+            #sortList.form-select option {
+                font-size: 0.875rem;
+                padding: 0.25rem 0.5rem;
+            }
+        }
+
+
+        @media (min-width: 768px) {
+
+            /* Desktop screens */
+            .product-card {
+                flex-direction: row;
+                align-items: center;
+                text-align: left;
+            }
+
+            .product-card img {
+                margin-right: 1rem;
+            }
+
+            .column-left {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                background-color: #f8f9fa;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center">Product Listing</h1>
+
+        <div class="row">
+            <div class="col-md-1 d-none d-md-block column-left">
+                <!-- Content for the first column -->
+                <h3>Links</h3>
+
+                <a href="#">Link 1</a> <br>
+                <a href="#">Link 2</a> <br>
+                <a href="#">Link 3</a> <br>
+
+            </div>
+            <div class="col-md-11">
+                <!-- Content for the second column -->
+                <div class="row justify-content-center">
+                    <div class="col-md-5 mb-3 text-center">
+                        <input type="text" id="searchBar" placeholder="Search products" class="form-control">
+                    </div>
+                    <div class="col-md-2 mb-3 text-center">
+                        <select id="sortList" class="form-select custom-select-sm">
+                            <option value="Sort">Sort by:</option>
+                            <option value="name">Name</option>
+                            <option value="low-to-high">Low to High Price</option>
+                            <option value="high-to-low">High to Low Price</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row" id="productList"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sample product data
+        var products = [
+            { name: 'Shirt', price: 10, image: '../watch.jpg' },
+            { name: 'Shirt', price: 20, image: '../watch.jpg' },
+            { name: 'pant', price: 15, image: '../watch.jpg' },
+            { name: 'watch', price: 15, image: '../watch.jpg' },
+            { name: 'lehenga', price: 15, image: '../watch.jpg' },
+            { name: 'watch', price: 15, image: '../watch.jpg' },
+            { name: 'Shoes', price: 15, image: '../watch.jpg' },
+            { name: 'Saree', price: 15, image: '../watch.jpg' },
+            { name: 'kurta', price: 15, image: '../watch.jpg' },
+            { name: 'raincoat', price: 15, image: '../watch.jpg' },
+            // Add more products here
+        ];
+
+        var searchBar = document.getElementById('searchBar');
+        var sortList = document.getElementById('sortList');
+        var productList = document.getElementById('productList');
+
+        // Initial display of all products
+        displayProducts(products);
+
+        // Attach event listeners
+        searchBar.addEventListener('input', handleSearch);
+        sortList.addEventListener('change', handleSort);
+
+        // Display products based on search query
+        function handleSearch(event) {
+            var query = event.target.value.trim().toLowerCase();
+            var filteredProducts = products.filter(function (product) {
+                return product.name.toLowerCase().includes(query);
+            });
+            displayProducts(filteredProducts);
+        }
+
+        // Sort and display products based on selected criteria
+        function handleSort(event) {
+            var criteria = event.target.value;
+            var sortedProducts;
+
+            if (criteria === 'low-to-high') {
+                sortedProducts = products.slice().sort(function (a, b) {
+                    return a.price - b.price;
+                });
+            } else if (criteria === 'high-to-low') {
+                sortedProducts = products.slice().sort(function (a, b) {
+                    return b.price - a.price;
+                });
+            } else {
+                sortedProducts = products.slice().sort(function (a, b) {
+                    return a.name.localeCompare(b.name);
+                });
+            }
+
+            displayProducts(sortedProducts);
+        }
+
+        // Update the product list in the UI
+        function displayProducts(products) {
+            productList.innerHTML = '';
+            var row = document.createElement('div');
+            row.className = 'row justify-content-center';
+
+            products.forEach(function (product) {
+                var col = document.createElement('div');
+                col.className = 'col-10 product-card';
+
+                col.innerHTML = `
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="${product.image}" class="card-img-top card-img" alt="${product.name}">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">${product.name}</h5>
+                                    <p class="card-text">Price: $${product.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                row.appendChild(col);
+            });
+
+            productList.appendChild(row);
+        }
+    </script>
+</body>
+
+</html>
