@@ -2023,3 +2023,20 @@ footer .copyright {
   background-color: #5C469C;
   border-radius: 5px;
 }
+
+/* ==================== MODAL CSS=============== */
+#confirmationModalHeader{
+  color: rgb(0, 0, 0);
+  background-color: #cacacad9;
+  font-size: 40px;
+}
+
+#confirmationModalBody{
+  background-color: rgba(237, 233, 233, 0.808);
+  font-size: 20px;
+  color: black;
+}
+#confirmationModalBody p{
+  font-size: 25px;
+  color: black;
+}
