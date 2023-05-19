@@ -20,9 +20,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
-    
-    
-    
+
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
     <!-- JavaScript Bundle with Popper -->
@@ -38,7 +38,7 @@
         })();
     </script>
     <script type="text/javascript">
-         window.onload = function () {
+        window.onload = function () {
             var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
 
             document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -53,8 +53,8 @@
                         confirmationModal.show();
                         setTimeout(function () {
                             confirmationModal.hide();
-                            window.location.href = '../index.html'; 
-                        }, 4000); 
+                            window.location.href = '../index.html';
+                        }, 4000);
                     }, function (error) {
                         console.log('FAILED...', error);
                     });
@@ -152,7 +152,8 @@
             });
         });
     </script>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8099924172844689"
+        crossorigin="anonymous"></script>
 
     <style>
         header {
@@ -227,7 +228,7 @@
                 <option>XL(42)</option>
                 <option>XXL(44)</option>
             </select>
-            
+
             <input type="number" id="quantityInput" value="1" />
             <button type="button" class="btn btn-primary popover-button" data-toggle="popover" onclick="addToCart(this)"
                 data-item="KOTI TOP LEHENGA">Add to Cart</button>
@@ -250,12 +251,18 @@
                 <b>Lehenga:-</b> Length 40-42 , ( Semi Stitched ) <br><br>
 
 
-                Introducing our stunning New Koti Top Lehenga in a captivating coffee color. This attractive party wear Malay top palazzo set is designed to make you stand out at any event. <br><br>
-                The top features a beautiful digital print on georgette material, giving it a stylish and modern look. It is fully stitched with a regular fit, available in XL (42) size with XXL (44) margin. The top is made from high-grade fabrics and yarn, ensuring excellent quality and comfort.
+                Introducing our stunning New Koti Top Lehenga in a captivating coffee color. This attractive party wear
+                Malay top palazzo set is designed to make you stand out at any event. <br><br>
+                The top features a beautiful digital print on georgette material, giving it a stylish and modern look.
+                It is fully stitched with a regular fit, available in XL (42) size with XXL (44) margin. The top is made
+                from high-grade fabrics and yarn, ensuring excellent quality and comfort.
                 <br><br>
-                The lehenga is made from chinon crush material, with a micro cotton inner lining for added comfort. The length of the lehenga is 40-42 inches, and it is semi-stitched for flexibility.
+                The lehenga is made from chinon crush material, with a micro cotton inner lining for added comfort. The
+                length of the lehenga is 40-42 inches, and it is semi-stitched for flexibility.
                 <br>
-                Experience the elegance and charm of our New Koti Top Lehenga, perfect for parties and special occasions. Trust in the quality and style of our GT brand products, as we take pride in delivering the best to our customers.
+                Experience the elegance and charm of our New Koti Top Lehenga, perfect for parties and special
+                occasions. Trust in the quality and style of our GT brand products, as we take pride in delivering the
+                best to our customers.
                 <br><br>
             </span>
         </div>
@@ -310,7 +317,7 @@
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
                 </div>
             </div>
-            <div class="pro"  onclick="window.location.href='f8.html';">
+            <div class="pro" onclick="window.location.href='f8.html';">
                 <img src="../img/products/f8.jpg" alt="">
                 <div class="des">
                     <h5>Traditional Chikankari Delight</h5>
@@ -396,91 +403,92 @@
 
 
 
-    
+
 
     <!-- ======================= -->
     <!-- ----- MODAL AND FORM -->
     <!-- ======================= -->
 
-          <!-- ==========MODAL============ -->
-          <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="cartModalLabel">Cart Items</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      <ul class="list-group" id="cart-items-list">
-                          <!-- Cart items will be dynamically added here -->
-                      </ul>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-toggle="modal"
-                          data-target="#orderModal">Order</button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-              </div>
-          </div>
-      </div>
-  
-  
-  
-      <!-- ===========FORM============ -->
-  
-      <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="orderModalLabel">Place an Order</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>
-                  <div class="modal-body">
-                      <form id="contact-form">
-                          <input type="hidden" name="contact_number">
-                          <div class="form-group">
-                              <label for="name">Name</label>
-                              <input type="text" class="form-control" id="name" name="user_name" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="mobile">Mobile</label>
-                              <input type="text" class="form-control" id="phone" name="user_mobile" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="email">Email</label>
-                              <input type="email" class="form-control" id="email" name="user_email" required>
-                          </div>
-                          <div class="form-group">
-                              <label for="address">Address</label>
-                              <textarea class="form-control" id="address" name="user_address" required></textarea>
-                          </div>
-                          <div class="form-group">
-                            <div id="output"></div>
-                          </div>
-                          <input type="hidden" name="cartItems" id="cartItems">
-                          <button type="submit" class="btn btn-primary">Send</button>
-                      </form>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <!-- ==========MODAL============ -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Cart Items</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group" id="cart-items-list">
+                        <!-- Cart items will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#orderModal">Order</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-       <!--Confirmation message Modal -->
-       <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+    <!-- ===========FORM============ -->
+
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Place an Order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="contact-form">
+                        <input type="hidden" name="contact_number">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="user_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" class="form-control" id="phone" name="user_mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="user_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea class="form-control" id="address" name="user_address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div id="output"></div>
+                        </div>
+                        <input type="hidden" name="cartItems" id="cartItems">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Confirmation message Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div id="confirmationModalHeader" class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Order Confirmation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: white;"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="color: white;"></button>
                 </div>
                 <div id="confirmationModalBody" class="modal-body">
                     <p>Your order has been confirmed.</p>
@@ -488,7 +496,7 @@
             </div>
         </div>
     </div>
-  
+
     <!-- ===================== -->
     <!-----     Replacing images  -------->
     <!-- ===================== -->
@@ -531,7 +539,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

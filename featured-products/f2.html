@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products - Fashion Frenzy</title>
     <meta name="keywords"
-    content="trending,clothing,fashion,mens wear, shopping,online clothing store, fashion trends, high-quality clothing, affordable fashion, trendy styles, hassle-free ordering, fast shipping, easy returns, wardrobe upgrade, unique style">
-    <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/t-shirt.png"/>
+        content="trending,clothing,fashion,mens wear, shopping,online clothing store, fashion trends, high-quality clothing, affordable fashion, trendy styles, hassle-free ordering, fast shipping, easy returns, wardrobe upgrade, unique style">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/t-shirt.png" />
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <!-- <link rel="stylesheet" href="css/all.min.css" /> -->
@@ -37,7 +37,7 @@
         })();
     </script>
     <script type="text/javascript">
-         window.onload = function () {
+        window.onload = function () {
             var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
 
             document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -53,7 +53,7 @@
                         setTimeout(function () {
                             confirmationModal.hide();
                             window.location.href = '../index.html'; // Replace 'home.html' with your actual home page URL
-                        }, 4000); 
+                        }, 4000);
                     }, function (error) {
                         console.log('FAILED...', error);
                     });
@@ -152,6 +152,8 @@
         });
     </script>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8099924172844689"
+        crossorigin="anonymous"></script>
 
     <style>
         header {
@@ -188,7 +190,7 @@
         </nav>
         <div id="mobile">
             <button type="button" class="btn" onclick="showCart()" data-toggle="modal" data-target="#cartModal"> <a
-                href="#"><i class="fa fa-cart-shopping"></i></a></button>
+                    href="#"><i class="fa fa-cart-shopping"></i></a></button>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </header>
@@ -220,7 +222,7 @@
             <!-- <h6>Home / Shirt</h6> -->
             <h4>TOMMY CASUAL STRIPED T-SHIRT</h4>
             <h2>Rs. 699</h2>
-            <select  id="sizeSelect">
+            <select id="sizeSelect">
                 <option selected disabled style="display:none;">No size selected</option>
                 <option>M(38)</option>
                 <option>L(40)</option>
@@ -228,16 +230,20 @@
             </select>
             <input type="number" id="quantityInput" value="1" />
             <button type="button" class="btn btn-primary popover-button" data-toggle="popover" onclick="addToCart(this)"
-            data-item="TOMMY CASUAL STRIPED T-SHIRT">Add to Cart</button>
+                data-item="TOMMY CASUAL STRIPED T-SHIRT">Add to Cart</button>
 
             <h4>Product Details</h4>
             <span>
 
                 <b>Sizes available :- </b> M, L and XL <br>
                 <b>Fabric :- </b>Cotton<br><br>
-                Introducing our TOMMY T-SHIRTS ULTIMATE ARTICLE, a designer collection that offers the best quality and utmost satisfaction to our valued customers. Made from premium COTTON MATTY fabric, these 7aQuality store articles ensure a comfortable and stylish fit. 
+                Introducing our TOMMY T-SHIRTS ULTIMATE ARTICLE, a designer collection that offers the best quality and
+                utmost satisfaction to our valued customers. Made from premium COTTON MATTY fabric, these 7aQuality
+                store articles ensure a comfortable and stylish fit.
                 <br><br>
-                Available in sizes M, L, and XL, our T-shirts are priced at a fixed rate of 699/-. Enjoy free shipping on your order, and rest assured that our quality is fully guaranteed. Experience the ultimate in TOMMY fashion today!
+                Available in sizes M, L, and XL, our T-shirts are priced at a fixed rate of 699/-. Enjoy free shipping
+                on your order, and rest assured that our quality is fully guaranteed. Experience the ultimate in TOMMY
+                fashion today!
                 <br><br>
             </span>
         </div>
@@ -293,7 +299,7 @@
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
                 </div>
             </div>
-            <div class="pro"  onclick="window.location.href='f8.html';">
+            <div class="pro" onclick="window.location.href='f8.html';">
                 <img src="../img/products/f8.jpg" alt="">
                 <div class="des">
                     <h5>Traditional Chikankari Delight</h5>
@@ -379,97 +385,98 @@
 
 
 
-       <!-- ======================= -->
+    <!-- ======================= -->
     <!-- ----- MODAL AND FORM -->
     <!-- ======================= -->
 
-            <!-- ==========MODAL============ -->
-            <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="cartModalLabel">Cart Items</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ul class="list-group" id="cart-items-list">
-                            <!-- Cart items will be dynamically added here -->
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#orderModal">Order</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
+    <!-- ==========MODAL============ -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Cart Items</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group" id="cart-items-list">
+                        <!-- Cart items will be dynamically added here -->
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#orderModal">Order</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-    
-    
-    
-        <!-- ===========FORM============ -->
-    
-        <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="orderModalLabel">Place an Order</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="contact-form">
-                            <input type="hidden" name="contact_number">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="user_name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="mobile">Mobile</label>
-                                <input type="text" class="form-control" id="phone" name="user_mobile" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="user_email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <textarea class="form-control" id="address" name="user_address" required></textarea>
-                            </div>
-                            <div class="form-group">
-                              <div id="output"></div>
-                            </div>
-                            <input type="hidden" name="cartItems" id="cartItems">
-                            <button type="submit" class="btn btn-primary">Send</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
+    </div>
 
-         <!--Confirmation message Modal -->
-         <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div id="confirmationModalHeader" class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Order Confirmation</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: white;"></button>
-                    </div>
-                    <div id="confirmationModalBody" class="modal-body">
-                        <p>Your order has been confirmed.</p>
-                    </div>
+
+
+    <!-- ===========FORM============ -->
+
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Place an Order</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="contact-form">
+                        <input type="hidden" name="contact_number">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="user_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" class="form-control" id="phone" name="user_mobile" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="user_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea class="form-control" id="address" name="user_address" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div id="output"></div>
+                        </div>
+                        <input type="hidden" name="cartItems" id="cartItems">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <!--Confirmation message Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="confirmationModalHeader" class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Order Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="color: white;"></button>
+                </div>
+                <div id="confirmationModalBody" class="modal-body">
+                    <p>Your order has been confirmed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ===================== -->
     <!-----     Replacing images  -------->
@@ -498,23 +505,23 @@
     <script src="../script.js"></script>
     <script>
         let mybutton = document.getElementById("myBtn");
-        
-        window.onscroll = function() {scrollFunction()};
-        
+
+        window.onscroll = function () { scrollFunction() };
+
         function scrollFunction() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
         function topFunction() {
-          document.body.scrollTop = 0;
-          document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
-        </script>
+    </script>
 
-        
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
